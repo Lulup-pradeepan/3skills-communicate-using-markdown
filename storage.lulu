@@ -1,0 +1,30 @@
+#include <stdio.h>
+int externVar =5;
+void customFunction() {
+    auto int autoVar=0;
+    static int staticVar=0;
+    autoVar++;
+    staticVar++;
+    printf("autoVar(auto):%d\n",autoVar);
+    printf("staticVar(static):%d\n",staticVar);
+}
+void RegisterFunction() {
+    register int registerVar=10;
+    printf("registerVar(register):%d\n",registerVar);
+}
+void externalFunction() {
+    extern int externVar;
+    printf("ExternVar (extern):%d\n",externVar);
+}
+int main() {
+    printf("\nCalling the CustomFunction\n");
+    
+    customFunction();
+    customFunction();
+    customFunction();
+    printf("\nCalling the ReisterFunction\n");
+    RegisterFunction();
+    printf("\nCalling the externalFunction\n");
+    externalFunction();
+    return 0;
+}
